@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ehsolucoes.com.br/webService/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ehsolucoes.com.br/webService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ehsolucoes.com.br/webService/">
+      <s:element name="iValorSeguranca">
+        <s:complexType />
+      </s:element>
+      <s:element name="iValorSegurancaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iValorSegurancaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iSomaSeguranca">
+        <s:complexType />
+      </s:element>
+      <s:element name="iSomaSegurancaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iSomaSegurancaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCriptografarString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTexto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sCriptografarStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCriptografarStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDescriptografarString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTexto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sDescriptografarStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDescriptografarStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sSenhaDireta">
+        <s:complexType />
+      </s:element>
+      <s:element name="sSenhaDiretaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSenhaDiretaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarDataExpiracao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarDataExpiracaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="verificarDataExpiracaoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarQteAcessosCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iQteAcessos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTipo" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verificarQteAcessosClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="verificarQteAcessosClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCodigoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCodigoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCodigoClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCodigoSistema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCodigoSistemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCodigoSistemaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ativarComputador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNumHD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNomeMaquina" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtDataAtual" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ativarComputadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ativarComputadorResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAtivacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarContraChaveAtivacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarContraChaveAtivacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gerarContraChaveAtivacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarChaveAtivacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sChave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarChaveAtivacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validarChaveAtivacaoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarChaveTela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtAgora" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarChaveTelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gerarChaveTelaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarContraChaveTela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="gerarContraChaveTelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gerarContraChaveTelaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarChave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sChave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sContraChave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarChaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="validarChaveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sFunctionTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTexto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sFunctionTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFunctionTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaDadosLicenca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLicenca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaDadosLicencaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaDadosLicencaResult" type="tns:licenciamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="licenciamento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="iDataExpiracao" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQteLicencas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodSistema" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQteAcessos" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="licenciamento" nillable="true" type="tns:licenciamento" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="iValorSegurancaSoapIn">
+    <wsdl:part name="parameters" element="tns:iValorSeguranca" />
+  </wsdl:message>
+  <wsdl:message name="iValorSegurancaSoapOut">
+    <wsdl:part name="parameters" element="tns:iValorSegurancaResponse" />
+  </wsdl:message>
+  <wsdl:message name="iSomaSegurancaSoapIn">
+    <wsdl:part name="parameters" element="tns:iSomaSeguranca" />
+  </wsdl:message>
+  <wsdl:message name="iSomaSegurancaSoapOut">
+    <wsdl:part name="parameters" element="tns:iSomaSegurancaResponse" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringSoapIn">
+    <wsdl:part name="parameters" element="tns:sCriptografarString" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringSoapOut">
+    <wsdl:part name="parameters" element="tns:sCriptografarStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringSoapIn">
+    <wsdl:part name="parameters" element="tns:sDescriptografarString" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringSoapOut">
+    <wsdl:part name="parameters" element="tns:sDescriptografarStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="sSenhaDiretaSoapIn">
+    <wsdl:part name="parameters" element="tns:sSenhaDireta" />
+  </wsdl:message>
+  <wsdl:message name="sSenhaDiretaSoapOut">
+    <wsdl:part name="parameters" element="tns:sSenhaDiretaResponse" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoSoapIn">
+    <wsdl:part name="parameters" element="tns:verificarDataExpiracao" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoSoapOut">
+    <wsdl:part name="parameters" element="tns:verificarDataExpiracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:verificarQteAcessosCliente" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:verificarQteAcessosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:getCodigoCliente" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:getCodigoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaSoapIn">
+    <wsdl:part name="parameters" element="tns:getCodigoSistema" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaSoapOut">
+    <wsdl:part name="parameters" element="tns:getCodigoSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ativarComputadorSoapIn">
+    <wsdl:part name="parameters" element="tns:ativarComputador" />
+  </wsdl:message>
+  <wsdl:message name="ativarComputadorSoapOut">
+    <wsdl:part name="parameters" element="tns:ativarComputadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:gerarContraChaveAtivacao" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:gerarContraChaveAtivacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:validarChaveAtivacao" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:validarChaveAtivacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaSoapIn">
+    <wsdl:part name="parameters" element="tns:gerarChaveTela" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaSoapOut">
+    <wsdl:part name="parameters" element="tns:gerarChaveTelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaSoapIn">
+    <wsdl:part name="parameters" element="tns:gerarContraChaveTela" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaSoapOut">
+    <wsdl:part name="parameters" element="tns:gerarContraChaveTelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveSoapIn">
+    <wsdl:part name="parameters" element="tns:validarChave" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveSoapOut">
+    <wsdl:part name="parameters" element="tns:validarChaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestSoapIn">
+    <wsdl:part name="parameters" element="tns:sFunctionTest" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestSoapOut">
+    <wsdl:part name="parameters" element="tns:sFunctionTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaDadosLicenca" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaDadosLicencaResponse" />
+  </wsdl:message>
+  <wsdl:message name="iValorSegurancaHttpGetIn" />
+  <wsdl:message name="iValorSegurancaHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="iSomaSegurancaHttpGetIn" />
+  <wsdl:message name="iSomaSegurancaHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringHttpGetIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringHttpGetIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sSenhaDiretaHttpGetIn" />
+  <wsdl:message name="sSenhaDiretaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoHttpGetIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteHttpGetIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+    <wsdl:part name="iQteAcessos" type="s:string" />
+    <wsdl:part name="bTipo" type="s:string" />
+    <wsdl:part name="sIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteHttpGetIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaHttpGetIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoHttpGetIn">
+    <wsdl:part name="sChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoHttpGetIn">
+    <wsdl:part name="sChave" type="s:string" />
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaHttpGetIn">
+    <wsdl:part name="dtAgora" type="s:string" />
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaHttpGetIn">
+    <wsdl:part name="sChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveHttpGetIn">
+    <wsdl:part name="sChave" type="s:string" />
+    <wsdl:part name="sContraChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestHttpGetIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaHttpGetIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaHttpGetOut">
+    <wsdl:part name="Body" element="tns:licenciamento" />
+  </wsdl:message>
+  <wsdl:message name="iValorSegurancaHttpPostIn" />
+  <wsdl:message name="iValorSegurancaHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="iSomaSegurancaHttpPostIn" />
+  <wsdl:message name="iSomaSegurancaHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringHttpPostIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sCriptografarStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringHttpPostIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sDescriptografarStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="sSenhaDiretaHttpPostIn" />
+  <wsdl:message name="sSenhaDiretaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoHttpPostIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarDataExpiracaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteHttpPostIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+    <wsdl:part name="iQteAcessos" type="s:string" />
+    <wsdl:part name="bTipo" type="s:string" />
+    <wsdl:part name="sIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="verificarQteAcessosClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteHttpPostIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaHttpPostIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCodigoSistemaHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoHttpPostIn">
+    <wsdl:part name="sChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveAtivacaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoHttpPostIn">
+    <wsdl:part name="sChave" type="s:string" />
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveAtivacaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaHttpPostIn">
+    <wsdl:part name="dtAgora" type="s:string" />
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarChaveTelaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaHttpPostIn">
+    <wsdl:part name="sChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="gerarContraChaveTelaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveHttpPostIn">
+    <wsdl:part name="sChave" type="s:string" />
+    <wsdl:part name="sContraChave" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarChaveHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestHttpPostIn">
+    <wsdl:part name="sTexto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sFunctionTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaHttpPostIn">
+    <wsdl:part name="sLicenca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retornaDadosLicencaHttpPostOut">
+    <wsdl:part name="Body" element="tns:licenciamento" />
+  </wsdl:message>
+  <wsdl:portType name="segurancaSoap">
+    <wsdl:operation name="iValorSeguranca">
+      <wsdl:input message="tns:iValorSegurancaSoapIn" />
+      <wsdl:output message="tns:iValorSegurancaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <wsdl:input message="tns:iSomaSegurancaSoapIn" />
+      <wsdl:output message="tns:iSomaSegurancaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <wsdl:input message="tns:sCriptografarStringSoapIn" />
+      <wsdl:output message="tns:sCriptografarStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <wsdl:input message="tns:sDescriptografarStringSoapIn" />
+      <wsdl:output message="tns:sDescriptografarStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <wsdl:input message="tns:sSenhaDiretaSoapIn" />
+      <wsdl:output message="tns:sSenhaDiretaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <wsdl:input message="tns:verificarDataExpiracaoSoapIn" />
+      <wsdl:output message="tns:verificarDataExpiracaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <wsdl:input message="tns:verificarQteAcessosClienteSoapIn" />
+      <wsdl:output message="tns:verificarQteAcessosClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <wsdl:input message="tns:getCodigoClienteSoapIn" />
+      <wsdl:output message="tns:getCodigoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <wsdl:input message="tns:getCodigoSistemaSoapIn" />
+      <wsdl:output message="tns:getCodigoSistemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ativarComputador">
+      <wsdl:input message="tns:ativarComputadorSoapIn" />
+      <wsdl:output message="tns:ativarComputadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <wsdl:input message="tns:gerarContraChaveAtivacaoSoapIn" />
+      <wsdl:output message="tns:gerarContraChaveAtivacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <wsdl:input message="tns:validarChaveAtivacaoSoapIn" />
+      <wsdl:output message="tns:validarChaveAtivacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <wsdl:input message="tns:gerarChaveTelaSoapIn" />
+      <wsdl:output message="tns:gerarChaveTelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <wsdl:input message="tns:gerarContraChaveTelaSoapIn" />
+      <wsdl:output message="tns:gerarContraChaveTelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <wsdl:input message="tns:validarChaveSoapIn" />
+      <wsdl:output message="tns:validarChaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <wsdl:input message="tns:sFunctionTestSoapIn" />
+      <wsdl:output message="tns:sFunctionTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <wsdl:input message="tns:retornaDadosLicencaSoapIn" />
+      <wsdl:output message="tns:retornaDadosLicencaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="segurancaHttpGet">
+    <wsdl:operation name="iValorSeguranca">
+      <wsdl:input message="tns:iValorSegurancaHttpGetIn" />
+      <wsdl:output message="tns:iValorSegurancaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <wsdl:input message="tns:iSomaSegurancaHttpGetIn" />
+      <wsdl:output message="tns:iSomaSegurancaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <wsdl:input message="tns:sCriptografarStringHttpGetIn" />
+      <wsdl:output message="tns:sCriptografarStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <wsdl:input message="tns:sDescriptografarStringHttpGetIn" />
+      <wsdl:output message="tns:sDescriptografarStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <wsdl:input message="tns:sSenhaDiretaHttpGetIn" />
+      <wsdl:output message="tns:sSenhaDiretaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <wsdl:input message="tns:verificarDataExpiracaoHttpGetIn" />
+      <wsdl:output message="tns:verificarDataExpiracaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <wsdl:input message="tns:verificarQteAcessosClienteHttpGetIn" />
+      <wsdl:output message="tns:verificarQteAcessosClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <wsdl:input message="tns:getCodigoClienteHttpGetIn" />
+      <wsdl:output message="tns:getCodigoClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <wsdl:input message="tns:getCodigoSistemaHttpGetIn" />
+      <wsdl:output message="tns:getCodigoSistemaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <wsdl:input message="tns:gerarContraChaveAtivacaoHttpGetIn" />
+      <wsdl:output message="tns:gerarContraChaveAtivacaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <wsdl:input message="tns:validarChaveAtivacaoHttpGetIn" />
+      <wsdl:output message="tns:validarChaveAtivacaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <wsdl:input message="tns:gerarChaveTelaHttpGetIn" />
+      <wsdl:output message="tns:gerarChaveTelaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <wsdl:input message="tns:gerarContraChaveTelaHttpGetIn" />
+      <wsdl:output message="tns:gerarContraChaveTelaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <wsdl:input message="tns:validarChaveHttpGetIn" />
+      <wsdl:output message="tns:validarChaveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <wsdl:input message="tns:sFunctionTestHttpGetIn" />
+      <wsdl:output message="tns:sFunctionTestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <wsdl:input message="tns:retornaDadosLicencaHttpGetIn" />
+      <wsdl:output message="tns:retornaDadosLicencaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="segurancaHttpPost">
+    <wsdl:operation name="iValorSeguranca">
+      <wsdl:input message="tns:iValorSegurancaHttpPostIn" />
+      <wsdl:output message="tns:iValorSegurancaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <wsdl:input message="tns:iSomaSegurancaHttpPostIn" />
+      <wsdl:output message="tns:iSomaSegurancaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <wsdl:input message="tns:sCriptografarStringHttpPostIn" />
+      <wsdl:output message="tns:sCriptografarStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <wsdl:input message="tns:sDescriptografarStringHttpPostIn" />
+      <wsdl:output message="tns:sDescriptografarStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <wsdl:input message="tns:sSenhaDiretaHttpPostIn" />
+      <wsdl:output message="tns:sSenhaDiretaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <wsdl:input message="tns:verificarDataExpiracaoHttpPostIn" />
+      <wsdl:output message="tns:verificarDataExpiracaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <wsdl:input message="tns:verificarQteAcessosClienteHttpPostIn" />
+      <wsdl:output message="tns:verificarQteAcessosClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <wsdl:input message="tns:getCodigoClienteHttpPostIn" />
+      <wsdl:output message="tns:getCodigoClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <wsdl:input message="tns:getCodigoSistemaHttpPostIn" />
+      <wsdl:output message="tns:getCodigoSistemaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <wsdl:input message="tns:gerarContraChaveAtivacaoHttpPostIn" />
+      <wsdl:output message="tns:gerarContraChaveAtivacaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <wsdl:input message="tns:validarChaveAtivacaoHttpPostIn" />
+      <wsdl:output message="tns:validarChaveAtivacaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <wsdl:input message="tns:gerarChaveTelaHttpPostIn" />
+      <wsdl:output message="tns:gerarChaveTelaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <wsdl:input message="tns:gerarContraChaveTelaHttpPostIn" />
+      <wsdl:output message="tns:gerarContraChaveTelaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <wsdl:input message="tns:validarChaveHttpPostIn" />
+      <wsdl:output message="tns:validarChaveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <wsdl:input message="tns:sFunctionTestHttpPostIn" />
+      <wsdl:output message="tns:sFunctionTestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <wsdl:input message="tns:retornaDadosLicencaHttpPostIn" />
+      <wsdl:output message="tns:retornaDadosLicencaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="segurancaSoap" type="tns:segurancaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="iValorSeguranca">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/iValorSeguranca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/iSomaSeguranca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/sCriptografarString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/sDescriptografarString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/sSenhaDireta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/verificarDataExpiracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/verificarQteAcessosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/getCodigoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/getCodigoSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ativarComputador">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/ativarComputador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarContraChaveAtivacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/validarChaveAtivacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarChaveTela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarContraChaveTela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/validarChave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/sFunctionTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <soap:operation soapAction="http://www.ehsolucoes.com.br/webService/retornaDadosLicenca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="segurancaSoap12" type="tns:segurancaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="iValorSeguranca">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/iValorSeguranca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/iSomaSeguranca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/sCriptografarString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/sDescriptografarString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/sSenhaDireta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/verificarDataExpiracao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/verificarQteAcessosCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/getCodigoCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/getCodigoSistema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ativarComputador">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/ativarComputador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarContraChaveAtivacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/validarChaveAtivacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarChaveTela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/gerarContraChaveTela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/validarChave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/sFunctionTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <soap12:operation soapAction="http://www.ehsolucoes.com.br/webService/retornaDadosLicenca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="segurancaHttpGet" type="tns:segurancaHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="iValorSeguranca">
+      <http:operation location="/iValorSeguranca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <http:operation location="/iSomaSeguranca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <http:operation location="/sCriptografarString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <http:operation location="/sDescriptografarString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <http:operation location="/sSenhaDireta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <http:operation location="/verificarDataExpiracao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <http:operation location="/verificarQteAcessosCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <http:operation location="/getCodigoCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <http:operation location="/getCodigoSistema" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <http:operation location="/gerarContraChaveAtivacao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <http:operation location="/validarChaveAtivacao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <http:operation location="/gerarChaveTela" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <http:operation location="/gerarContraChaveTela" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <http:operation location="/validarChave" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <http:operation location="/sFunctionTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <http:operation location="/retornaDadosLicenca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="segurancaHttpPost" type="tns:segurancaHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="iValorSeguranca">
+      <http:operation location="/iValorSeguranca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iSomaSeguranca">
+      <http:operation location="/iSomaSeguranca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sCriptografarString">
+      <http:operation location="/sCriptografarString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sDescriptografarString">
+      <http:operation location="/sDescriptografarString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSenhaDireta">
+      <http:operation location="/sSenhaDireta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarDataExpiracao">
+      <http:operation location="/verificarDataExpiracao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarQteAcessosCliente">
+      <http:operation location="/verificarQteAcessosCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoCliente">
+      <http:operation location="/getCodigoCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodigoSistema">
+      <http:operation location="/getCodigoSistema" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveAtivacao">
+      <http:operation location="/gerarContraChaveAtivacao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChaveAtivacao">
+      <http:operation location="/validarChaveAtivacao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarChaveTela">
+      <http:operation location="/gerarChaveTela" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gerarContraChaveTela">
+      <http:operation location="/gerarContraChaveTela" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarChave">
+      <http:operation location="/validarChave" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sFunctionTest">
+      <http:operation location="/sFunctionTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaDadosLicenca">
+      <http:operation location="/retornaDadosLicenca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="seguranca">
+    <wsdl:port name="segurancaSoap" binding="tns:segurancaSoap">
+      <soap:address location="http://www.ehsolucoes.com.br/webService/seguranca.asmx" />
+    </wsdl:port>
+    <wsdl:port name="segurancaSoap12" binding="tns:segurancaSoap12">
+      <soap12:address location="http://www.ehsolucoes.com.br/webService/seguranca.asmx" />
+    </wsdl:port>
+    <wsdl:port name="segurancaHttpGet" binding="tns:segurancaHttpGet">
+      <http:address location="http://www.ehsolucoes.com.br/webService/seguranca.asmx" />
+    </wsdl:port>
+    <wsdl:port name="segurancaHttpPost" binding="tns:segurancaHttpPost">
+      <http:address location="http://www.ehsolucoes.com.br/webService/seguranca.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Parametros>
+  <Server>ehsolucoes.com.br</Server>  
+  <Port>3306</Port>
+  <User>eduardo</User>
+  <Pass>56DjAoGLFCwK1ZALFAcwFLYk/JMXeCxX</Pass>  
+  <DataBase>ehsolucoes_com_br_clientes</DataBase>
+</Parametros>
+
+
+ehsolucoes@clientes

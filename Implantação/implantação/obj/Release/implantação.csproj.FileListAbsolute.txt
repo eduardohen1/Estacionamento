@@ -1,0 +1,7 @@
+F:\Fontes\Estancionamento\Implantação\implantação\bin\Release\implantação.exe
+F:\Fontes\Estancionamento\Implantação\implantação\bin\Release\implantação.pdb
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Release\implantação.csprojResolveAssemblyReference.cache
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Release\implantação.Properties.Resources.resources
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Release\implantação.csproj.GenerateResource.Cache
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Release\implantação.exe
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Release\implantação.pdb

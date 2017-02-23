@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Parametros>
+  <Servidor>EDUARDOVM-PC</Servidor>  
+  <Porta>1433</Porta>
+  <User>sa</User>
+  <Pass>123</Pass>  
+  <DataBase>estancionamento</DataBase>
+  <ChaveAcesso>FFFFA@ehsolucoes</ChaveAcesso>
+</Parametros>

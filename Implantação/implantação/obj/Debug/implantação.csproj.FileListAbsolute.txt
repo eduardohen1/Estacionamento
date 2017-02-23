@@ -1,0 +1,6 @@
+F:\Fontes\Estancionamento\Implantação\implantação\bin\Debug\implantação.exe
+F:\Fontes\Estancionamento\Implantação\implantação\bin\Debug\implantação.pdb
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Debug\implantação.Properties.Resources.resources
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Debug\implantação.csproj.GenerateResource.Cache
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Debug\implantação.exe
+F:\Fontes\Estancionamento\Implantação\implantação\obj\Debug\implantação.pdb

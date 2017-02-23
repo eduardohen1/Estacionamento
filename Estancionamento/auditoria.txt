@@ -1,0 +1,25 @@
+﻿Auditoria
+Operação    -	Descritivo
+001				Excluir histórico cadastrado
+002				Inserir nova observação
+003				Excluir observação cadastrada
+004				Insrir novo histórico
+005				Excluir despesa
+006				Excluir comissão
+007				Inserir nova comissão
+008				Compra de carro
+009				Venda de carro
+010				Cancelar venda
+011				Alterada senha de usuário
+012				Logar no sistema
+013				Sair do sistema
+014				Backup do banco de dados
+015				Entrada em tela de suporte
+016				Limpar banco de dados
+017				Excluir registro de Marca
+018				Excluir opcional
+019				Excluir conta/cartão
+020				Inserir conta/cartão
+021				Excluir cliente
+-----------------------------
+Lançado em tabela!
